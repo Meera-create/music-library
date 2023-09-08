@@ -4,8 +4,7 @@ const path = require('path')
 // capture first command line argument passed to this script
 const envName = process.argv.slice(2)[0]
 
-// this function decides whether to load .env or .env.test.
-
+// this function decides whether to load .env or .env.test
 const loadEnv = (envName) => {
   const { NODE_ENV } = process.env
   if (NODE_ENV != 'production') {
