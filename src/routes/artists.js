@@ -4,10 +4,9 @@ const express=require('express')
 
 const artistRouter= express.Router();
 
-// artistRouter.get('/',createArtist.get);
-artistRouter.post('/', createArtist);
+
+artistRouter.post('/',createArtist);
 
 
-
-
-module.exports = artistRouter;
+module.exports = artistRouter
+//added curly brackets
