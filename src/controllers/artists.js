@@ -14,7 +14,7 @@ res.status(201).json(artist)
 
 }
 
-module.exports = {createArtist}
+module.exports = createArtist
 
 //exports.name
 //way to export and create at the same time

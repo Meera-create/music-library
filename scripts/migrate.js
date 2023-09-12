@@ -28,19 +28,20 @@ const config = {
 };
 
 const migrateDB = async (config) => {
-  console.log('Migrating Database...');
 
-  const output = await migrate(config, './migrations');
+  console.log('Migrating Database...')
+
+  const output = await migrate(config, './migrations')
 
   if (!output.length) {
-    console.log('Database already up to date!');
+    console.log('Database already up to date!')
   } else {
-    console.log(output);
+    console.log(output)
   }
-};
+}
 
 try {
-  migrateDB(config);
+  migrateDB(config)
 } catch (err) {
-  console.log(err);
+  console.log(err)
 }
