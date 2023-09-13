@@ -38,7 +38,7 @@ describe('Read Artists',()=>{
       })
     })
   })
-})
+
 
 
 describe('GET /artists/{id}',()=>{
@@ -53,8 +53,17 @@ it('returns a 404 if the artist does not exist',async()=>{
   const {status,body}=await request(app).get(`/artists/999999999`).send()
 
   expect(status).to.equal(404)
-  expect(body.message).to.equal('artist 999999999 does not exist')
+  expect(body.message).to.equal('artist with 999999999 does not exist')
 })
+
+
+})
+
+
+
+
+
+
 
 
 })

@@ -26,7 +26,24 @@ res.status(200).json(rows)
 }
 }
 
-module.exports = {createArtist,getAllArtist}
+
+const getArtistByID = async(req,res)=>{
+ 
+  try{
+    const{id}=req.params
+  const{rows:[artist]}=await db.query('SELECT * FROM Artists WHERE id=$1',[id])
+
+  if(!artist)
+  return res.status(404).json({message:`artist with ${id} does not exist`})
+
+  res.status(200).json(artist)
+  }catch(err){
+    res.status(500).json(err.message)
+  }
+  }
+  //instead of placing the [id] in the script, we use $1 (auto escaping)
+
+module.exports = {createArtist,getAllArtist,getArtistByID}
 //exports.name
 //way to export and create at the same time
 

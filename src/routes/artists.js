@@ -1,5 +1,4 @@
 const controller= require('../controllers/artists');
-
 const express=require('express')
 
 
@@ -12,5 +11,7 @@ artistRouter.post('/',controller.createArtist)
 artistRouter.get('/',controller.getAllArtist)
 //to get all records from database
 
+artistRouter.get('/:id',controller.getArtistByID)
+//get artists by ID
 
 module.exports = artistRouter
