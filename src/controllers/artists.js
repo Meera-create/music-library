@@ -13,9 +13,20 @@ res.status(201).json(artist)
 }
 }
 
-module.exports = createArtist
-//added curly brackets
 
+//gets all artists from database 
+const getAllArtist = async(_req,res)=>{
+ 
+try{
+const{rows}=await db.query('SELECT * FROM Artists')
+res.status(200).json(rows)
+}catch(err){
+   
+  res.status(500).json(err.message)
+}
+}
+
+module.exports = {createArtist,getAllArtist}
 //exports.name
 //way to export and create at the same time
 

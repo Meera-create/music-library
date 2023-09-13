@@ -1,12 +1,16 @@
-const createArtist= require('../controllers/artists');
+const controller= require('../controllers/artists');
+
 const express=require('express')
 
 
 const artistRouter= express.Router();
 
 
-artistRouter.post('/',createArtist);
+artistRouter.post('/',controller.createArtist)
+//sends to artist controller
+
+artistRouter.get('/',controller.getAllArtist)
+//to get all records from database
 
 
 module.exports = artistRouter
-//added curly brackets
