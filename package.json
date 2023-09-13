@@ -6,7 +6,7 @@
     "migrate": "node scripts/migrate.js",
     "prestart": "node scripts/create-database.js && npm run migrate",
     "start": "nodemon -r dotenv/config index.js",
-    "pretest": "node scripts/create-database.js test && npm run migrate",
+    "pretest": "node scripts/create-database.js test && npm run migrate test",
     "test": "mocha tests/**/*.js --exit --recursive --timeout 60000 --file ./tests/test-setup.js",
     "posttest": "node scripts/drop-database.js",
     "lint": "eslint ."

@@ -12,7 +12,7 @@ describe('create artist',()=>{
           name:'Tame Impala',
           genre:'rock',
         });
-
+        //console.log('grgwhkj',body)
         expect(status).to.equal(201);
         expect(body.name).to.equal('Tame Impala');
         expect(body.genre).to.equal('rock');

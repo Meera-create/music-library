@@ -26,7 +26,7 @@ describe('Read Artists',()=>{
 
   describe('GET /artists',()=>{
     it('returns all artist records in the database',async()=>{
-      const{status,body}=(await request(app).get('/artists')).send()
+      const{status,body}=await request(app).get('/artists').send()
 
       expect(status).to.equal(200)
       expect(body.length).to.equal(3)

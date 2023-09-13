@@ -8,6 +8,7 @@ try{
 const{rows:[artist]}=await db.query(`INSERT INTO Artists (name,genre) VALUES ($1,$2) RETURNING *`, [name,genre])
 res.status(201).json(artist)
 }catch(err){
+   //console.log('grgwhkj',err.message)
   res.status(500).json(err.message)
 }
 }
