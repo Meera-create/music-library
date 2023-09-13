@@ -14,4 +14,7 @@ artistRouter.get('/',controller.getAllArtist)
 artistRouter.get('/:id',controller.getArtistByID)
 //get artists by ID
 
+artistRouter.put('/:id',controller.updatingArtist)
+//modify artist record
+
 module.exports = artistRouter

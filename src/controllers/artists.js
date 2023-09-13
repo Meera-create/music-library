@@ -43,7 +43,26 @@ const getArtistByID = async(req,res)=>{
   }
   //instead of placing the [id] in the script, we use $1 (auto escaping)
 
-module.exports = {createArtist,getAllArtist,getArtistByID}
+
+  const updatingArtist = async(req,res)=>{
+ 
+    const{id}=req.params
+    const{name,genre}=req.body
+
+    try{
+    const{rows:[artist]}=await db.query('UPDATE Artists SET name=$1, genre=$2 WHERE id=$3 RETURNING *',[name,genre,id])
+  
+    if(!artist)
+    return res.status(404).json({message:`artist with ${id} does not exist`})
+  
+    res.status(200).json(artist)
+    }catch(err){
+      console.log(err)
+      res.status(500).json(err.message)
+    }
+    }
+
+module.exports = {createArtist,getAllArtist,getArtistByID,updatingArtist}
 //exports.name
 //way to export and create at the same time
 
