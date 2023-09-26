@@ -2,6 +2,7 @@ const controller= require('../controllers/artists');
 const express=require('express')
 
 
+
 const artistRouter= express.Router();
 
 
@@ -19,5 +20,7 @@ artistRouter.put('/:id',controller.updatingArtist)
 
 artistRouter.delete('/:id',controller.deletingArtists)
 //delete artist record
+
+
 
 module.exports = artistRouter
