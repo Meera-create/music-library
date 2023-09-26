@@ -25,13 +25,13 @@ describe('Create Album',()=>{
         const {status, body} = await request(app).post('/albums').send({
           //const {status, body} = await request(app).post('/artists/$(artist.id)/albums').send({
           name:'AlbumName',
-          year:'2020',
+          year:2020,
           artistid:artist.id
         });
         //console.log('grgwhkj',body)
         expect(status).to.equal(201);
         expect(body.name).to.equal('AlbumName');
-        expect(body.year).to.equal('2020');
+        expect(body.year).to.equal(2020);
         expect(body.artistid).to.equal(artist.id)
 
       
