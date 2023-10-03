@@ -4,14 +4,11 @@ const artistRouter = require('./routes/artists');
 //const createArtist=require('./controllers/artists')
 const albumRouter=require('./routes/albums')
 
-
 const app = express();
-
 
 app.use(express.json());
 
 app.use('/artists', artistRouter);
-//sends to artists router with the endpoint /artist''
 
 app.use('/albums',albumRouter)
 
